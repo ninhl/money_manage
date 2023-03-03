@@ -1,16 +1,23 @@
 <template>
   <nav-bar/>
-  <home-page/>
+  <router-view/>
 </template>
 
 <script>
-import HomePage from "./pages/home.vue"
 import NavBar from "./components/Nav.vue"
 export default {
   name: 'App',
   components: {
-    HomePage,
     NavBar,
+  },
+  data(){
+    return {
+      transactions: null
+    }
+  },
+
+  mounted(){
+    console.log('App mounted')
   }
 }
 </script>
@@ -20,7 +27,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
